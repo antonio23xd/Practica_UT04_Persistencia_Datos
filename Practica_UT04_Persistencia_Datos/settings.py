@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'Practica_UT04_Persistencia_Datos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'PracticaUT04',
+        'USER': 'alumno',
+        'PASSWORD': 'alumno',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
