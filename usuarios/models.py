@@ -24,13 +24,12 @@ class Alumno(Usuario):
     id_alumno = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
 #Modelo Tarea
-class Tarea():
+class Tarea(models.Model):
     TIPOS_TAREA = [
         ('INDIVIDUAL', 'Individual'),
         ('GRUPAL', 'Grupal'),
         ('EVALUABLE', 'Evaluable'),
-    ]
-    id_tarea = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    ]    
     nombre_tarea = models.CharField(max_length=200)
     tipo_tarea = models.CharField(max_length=20, choices=TIPOS_TAREA)
     es_evaluable = models.BooleanField(default=False)
@@ -52,7 +51,7 @@ class Tarea_Individual(Tarea):
 class Tarea_Grupal(Tarea):
     id_tarea_grupal = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
-    
+
     def __str__(self):
         return super().__str__() + f" - {self.alumno}"
 
