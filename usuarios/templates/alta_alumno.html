@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Alumno</title>
+</head>
+<body>
+    <h1>Formulario de Alta de Alumno</h1>
+    <form method="post">        
+        {% csrf_token %}
+        {% load crispy_forms_tags %}  
+        {{ alumno_form.nombre|as_crispy_field }}
+        {{ alumno_form.apellido|as_crispy_field }}
+        {{ alumno_form.fecha_nacimiento|as_crispy_field }}
+        {{ alumno_form.dni|as_crispy_field }}
+        {{ alumno_form.email|as_crispy_field }}
+        <button type="submit">Dar de Alta</button>
+    </form>
+</body>
+</html>
