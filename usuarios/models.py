@@ -18,6 +18,16 @@ class Usuario(models.Model):
     def __str__(self):
         return f"{self.nombre} {self.apellidos} {self.fecha_nacimiento} {self.dni} {self.email} {self.rol}"
 
+class Alumno(models.Model):
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
+    def __str__(self):
+        return f"Alumno: {self.usuario.nombre} {self.usuario.apellidos} {self.usuario.fecha_nacimiento} {self.usuario.dni} {self.usuario.email} {self.usuario.rol}"
+
+class Profesor(models.Model):
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
+    def __str__(self):
+        return f"Profesor: {self.usuario.nombre} {self.usuario.apellidos} {self.usuario.fecha_nacimiento} {self.usuario.dni} {self.usuario.email} {self.usuario.rol}"
+
 #Modelo Tarea
 class Tarea(models.Model):
     TIPOS_TAREA = [

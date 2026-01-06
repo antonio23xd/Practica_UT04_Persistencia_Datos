@@ -1,9 +1,9 @@
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.contrib import messages
-
 from usuarios.forms import UsuarioForm
-from usuarios.models import Usuario
+from usuarios.models import Profesor, Usuario, Alumno
+
 # Create your views here.
 alumnos = [
         {"nombre": "Juan", "apellidos": "Pérez", "dni": "12345678A"},
@@ -16,6 +16,12 @@ def alta_usuario(request):
         usuario_form = UsuarioForm(request.POST)
         if usuario_form.is_valid():
             usuario = usuario_form.save()
+            if usuario.rol == 'ALUMNO':                
+                alumno = Alumno(usuario=usuario)
+                alumno.save()
+            elif usuario.rol == 'PROFESOR':
+                profesor = Profesor(usuario=usuario)
+                profesor.save()            
             messages.success(request, f'Usuario {usuario.nombre} {usuario.apellidos} creado correctamente.')
         else:
             print(usuario_form.errors)
