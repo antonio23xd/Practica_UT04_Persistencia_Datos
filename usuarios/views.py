@@ -1,28 +1,30 @@
-from pyexpat.errors import messages
 from django.shortcuts import redirect, render
 from usuarios.forms import AlumnoForm
-from usuarios.models import Alumno
-
+from django.contrib import messages
 # Create your views here.
 alumnos = [
-        {"nombre": "Juan", "apellidos": "Pérez", "DNI": "12345678A"},
-        {"nombre": "María", "apellidos": "Gómez", "DNI": "87654321B"},
+        {"nombre": "Juan", "apellidos": "Pérez", "dni": "12345678A"},
+        {"nombre": "María", "apellidos": "Gómez", "dni": "87654321B"},
     ]
 
 #Dar alta alumno
 def alta_alumno(request):
-    alumno_form = None
     if request.method == 'POST':
         alumno_form = AlumnoForm(request.POST)
         if alumno_form.is_valid():
             alumno = alumno_form.save()
             messages.success(request, f'Alumno {alumno.nombre} {alumno.apellidos} creado correctamente.')
-        return redirect('DatosPersonales.html')
+        else:
+            print(alumno_form.errors)
+        return redirect('visualizar_datos_alumno')
+    else:
+        alumno_form = AlumnoForm()
     return render(request, 'alta_alumno.html', {'alumno_form': alumno_form})
 
 # Visualizar los datos personales de un usuario
 def visualizar_datos_alumno(request):
     return render(request, 'DatosPersonales.html', {'datos': alumnos})
+
 
 # Visualizar la lista de usuarios
 def visualizar_lista_alumnos(request):

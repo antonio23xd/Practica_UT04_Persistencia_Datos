@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Practica_UT04_Persistencia_Datos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ BASE_DIR / 'Practica_UT04_Persistencia_Datos' / 'templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
