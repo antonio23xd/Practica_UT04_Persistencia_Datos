@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import redirect, render
 from usuarios.forms import AlumnoForm
 from django.contrib import messages
@@ -23,13 +24,16 @@ def alta_alumno(request):
         alumno_form = AlumnoForm()
     return render(request, 'alta_alumno.html', {'alumno_form': alumno_form})
 
-# Visualizar los datos personales de un usuario
-def visualizar_datos_alumno(request):
-    return render(request, 'DatosPersonales.html', {'datos': alumnos})
-
+# Visualizar los datos personales de un alumno
+def visualizar_datos_alumno(request, id_alumno):
+    alumno = Alumno.objects.filter(id_alumno=id_alumno).first()
+    if alumno is None:
+        raise Http404("Alumno no encontrado")
+    return render(request, 'visualizar_datos_alumno.html', {'alumno': alumno})
 
 # Visualizar la lista de usuarios
 def visualizar_lista_alumnos(request):
     #Recupero los alumnos de la base de datos
     lista_alumnos = Alumno.objects.all()
+    print(lista_alumnos)
     return render(request, 'lista_alumnos.html', {'alumnos': lista_alumnos})

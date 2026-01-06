@@ -22,6 +22,9 @@ class Profesor(Usuario):
 
 class Alumno(Usuario):
     id_alumno = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    
+    def __str__(self):
+        return f"{self.id_alumno}" + super().__str__()
 
 #Modelo Tarea
 class Tarea(models.Model):
