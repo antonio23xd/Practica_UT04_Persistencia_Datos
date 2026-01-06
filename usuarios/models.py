@@ -2,34 +2,21 @@ import uuid
 from django.db import models
 
 # Create your models here.
-#Clase abstracta Usuario
 class Usuario(models.Model):
     TIPO_USUARIO = [
         ('ALUMNO', 'Alumno'),
         ('PROFESOR', 'Profesor'),
     ]
+    id_usuario = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     nombre = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=150)
     fecha_nacimiento = models.DateField()
     dni = models.CharField(max_length=20, unique=True)
     email = models.EmailField(unique=True)
     rol = models.CharField(max_length=20, choices=TIPO_USUARIO, default='ALUMNO')
-    class Meta:
-        abstract = True
 
     def __str__(self):
         return f"{self.nombre} {self.apellidos} {self.fecha_nacimiento} {self.dni} {self.email} {self.rol}"
-
-#De momento dejamos las clases Profesor y Alumno vacías,
-# solamente heredan de Usuario
-class Profesor(Usuario):
-    id_profesor = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-
-class Alumno(Usuario):
-    id_alumno = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    
-    def __str__(self):
-        return f"{self.id_alumno}" + super().__str__()
 
 #Modelo Tarea
 class Tarea(models.Model):
@@ -51,21 +38,21 @@ class Tarea(models.Model):
 
 class Tarea_Individual(Tarea):
     id_tarea_individual = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)    
+    alumno = models.ForeignKey(Usuario, on_delete=models.CASCADE)    
 
     def __str__(self):
         return super().__str__() + f" - {self.alumno}"
 
 class Tarea_Grupal(Tarea):
     id_tarea_grupal = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
+    alumno = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
     def __str__(self):
         return super().__str__() + f" - {self.alumno}"
 
 class Tarea_Evaluable(Tarea):
     id_tarea_evaluable = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    profesores = models.ManyToManyField(Profesor)
+    profesores = models.ManyToManyField(Usuario)
     calificacion = models.FloatField()
 
     def __str__(self):

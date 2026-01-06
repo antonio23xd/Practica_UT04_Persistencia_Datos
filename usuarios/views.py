@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from django.contrib import messages
 
 from usuarios.forms import UsuarioForm
-from usuarios.models import Alumno
+from usuarios.models import Usuario
 # Create your views here.
 alumnos = [
         {"nombre": "Juan", "apellidos": "Pérez", "dni": "12345678A"},
@@ -19,21 +19,21 @@ def alta_usuario(request):
             messages.success(request, f'Usuario {usuario.nombre} {usuario.apellidos} creado correctamente.')
         else:
             print(usuario_form.errors)
-        return redirect('visualizar_datos_alumno')
+        return redirect('visualizar_lista_usuarios')
     else:
         usuario_form = UsuarioForm()
     return render(request, 'alta_usuario.html', {'usuario_form': usuario_form})
 
-# Visualizar los datos personales de un alumno
-def visualizar_datos_alumno(request, id_alumno):
-    alumno = Alumno.objects.filter(id_alumno=id_alumno).first()
-    if alumno is None:
-        raise Http404("Alumno no encontrado")
-    return render(request, 'visualizar_datos_alumno.html', {'alumno': alumno})
+# Visualizar los datos personales de un usuario
+def visualizar_datos_usuario(request, id_usuario):
+    usuario = Usuario.objects.filter(id_usuario=id_usuario).first()
+    if usuario is None:
+        raise Http404("Usuario no encontrado")
+    return render(request, 'visualizar_datos_usuario.html', {'usuario': usuario})
 
-# Visualizar la lista de alumnos
-def visualizar_lista_alumnos(request):
+# Visualizar la lista de usuarios
+def visualizar_lista_usuarios(request):
     #Recupero los usuarios de la base de datos
-    lista_alumnos = Alumno.objects.all()
-    print(lista_alumnos)
-    return render(request, 'lista_alumnos.html', {'lista_alumnos': lista_alumnos})
+    lista_usuarios = Usuario.objects.all()
+    print(lista_usuarios)
+    return render(request, 'lista_usuarios.html', {'lista_usuarios': lista_usuarios})

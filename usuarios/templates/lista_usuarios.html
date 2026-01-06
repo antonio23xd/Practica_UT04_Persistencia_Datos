@@ -3,9 +3,9 @@
 
 {% block title %}Lista de Alumnos{% endblock %}
 {% block content %}
-{% for alumno in lista_alumnos %}
-    <a href="{% url 'visualizar_datos_alumno' alumno.id_alumno %}">
-        {{ alumno.nombre }} {{ alumno.apellidos }}
+{% for usuario in lista_usuarios %}
+    <a href="{% url 'visualizar_datos_usuario' usuario.id_usuario %}">
+        {{ usuario.nombre }} {{ usuario.apellidos }}
     </a>
 {% endfor %}
 {% endblock %}
