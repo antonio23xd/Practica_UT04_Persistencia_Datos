@@ -3,17 +3,22 @@ from django.db import models
 
 # Create your models here.
 #Clase abstracta Usuario
-class Usuario(models.Model):    
+class Usuario(models.Model):
+    TIPO_USUARIO = [
+        ('ALUMNO', 'Alumno'),
+        ('PROFESOR', 'Profesor'),
+    ]
     nombre = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=150)
     fecha_nacimiento = models.DateField()
     dni = models.CharField(max_length=20, unique=True)
     email = models.EmailField(unique=True)
+    rol = models.CharField(max_length=20, choices=TIPO_USUARIO, default='ALUMNO')
     class Meta:
         abstract = True
 
     def __str__(self):
-        return f"{self.nombre} {self.apellidos} {self.fecha_nacimiento} {self.dni} {self.email}"
+        return f"{self.nombre} {self.apellidos} {self.fecha_nacimiento} {self.dni} {self.email} {self.rol}"
 
 #De momento dejamos las clases Profesor y Alumno vacías,
 # solamente heredan de Usuario

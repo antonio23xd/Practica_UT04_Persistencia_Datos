@@ -1,16 +1,17 @@
 from django import forms
-from usuarios.models import Alumno
+from usuarios.models import Usuario
 
-class AlumnoForm(forms.ModelForm):    
+class UsuarioForm(forms.ModelForm):    
     class Meta:
-        model = Alumno
-        fields = ('nombre', 'apellidos', 'fecha_nacimiento', 'dni', 'email')
+        model = Usuario
+        fields = ('nombre', 'apellidos', 'fecha_nacimiento', 'dni', 'email', 'rol')
         widgets = {
             'nombre': forms.TextInput(attrs={'placeholder': 'Introduce tu nombre', 'class': 'form-control'}),
             'apellidos': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}),
             'dni': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'rol': forms.Select(attrs={'class': 'form-control'}),
         }
 
     #Validaciones        
@@ -31,11 +32,19 @@ class AlumnoForm(forms.ModelForm):
         #Validación email
         if not cleaned_data.get('email'):
             self.add_error('email', 'El email no puede estar vacío.')
+        #Validación rol
+        if not cleaned_data.get('rol'):
+            self.add_error('rol', 'El rol no puede estar vacío.')
         return cleaned_data
 
-    #Guardar el Alumno
+    #Guardar el Usuario
     def save(self, commit=True):
-        Alumno = super().save(commit=False)
-        if commit:
-            Alumno.save()
+        if self.cleaned_data.get('rol') == 'ALUMNO':
+            Alumno = super().save(commit=False)
+            if commit:
+                Alumno.save()
+        else:
+            Profesor = super().save(commit=False)
+            if commit:
+                Profesor.save()
         return super().save(commit)

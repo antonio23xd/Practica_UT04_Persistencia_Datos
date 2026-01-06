@@ -3,7 +3,7 @@
 
 {% block title %}Lista de Alumnos{% endblock %}
 {% block content %}
-{% for alumno in alumnos %}
+{% for alumno in lista_alumnos %}
     <a href="{% url 'visualizar_datos_alumno' alumno.id_alumno %}">
         {{ alumno.nombre }} {{ alumno.apellidos }}
     </a>

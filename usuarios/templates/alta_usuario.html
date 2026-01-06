@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Alta de Usuario{% endblock %}
+{% block content %}
+    <h2>Alta de Usuario</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ usuario_form.nombre|as_crispy_field }}
+        {{ usuario_form.apellidos|as_crispy_field }}
+        {{ usuario_form.fecha_nacimiento|as_crispy_field }}
+        {{ usuario_form.dni|as_crispy_field }}
+        {{ usuario_form.email|as_crispy_field }}
+        {{ usuario_form.rol|as_crispy_field }}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock %}
