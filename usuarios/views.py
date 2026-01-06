@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from usuarios.forms import AlumnoForm
 from django.contrib import messages
+
+from usuarios.models import Alumno
 # Create your views here.
 alumnos = [
         {"nombre": "Juan", "apellidos": "Pérez", "dni": "12345678A"},
@@ -28,4 +30,6 @@ def visualizar_datos_alumno(request):
 
 # Visualizar la lista de usuarios
 def visualizar_lista_alumnos(request):
-    return render(request, 'usuarios/lista_usuarios.html', {'alumnos': alumnos})
+    #Recupero los alumnos de la base de datos
+    lista_alumnos = Alumno.objects.all()
+    return render(request, 'lista_alumnos.html', {'alumnos': lista_alumnos})

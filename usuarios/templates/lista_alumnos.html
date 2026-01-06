@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Lista de Alumnos{% endblock %}
+{% block content %}
+{% for alumno in alumnos %}
+    <p>{{ alumno.nombre }} {{ alumno.apellidos }}</p>
+{% endfor %}
+{% endblock %}
