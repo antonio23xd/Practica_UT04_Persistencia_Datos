@@ -5,7 +5,8 @@
 {% block content %}
 {% for usuario in lista_usuarios %}
     <a href="{% url 'visualizar_datos_usuario' usuario.id_usuario %}">
-        {{ usuario.nombre }} {{ usuario.apellidos }}
+        {{ usuario.nombre }} {{ usuario.apellidos }} {{ usuario.rol }}
     </a>
+    <br>
 {% endfor %}
 {% endblock %}
