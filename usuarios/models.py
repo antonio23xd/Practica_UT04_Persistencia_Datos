@@ -30,14 +30,15 @@ class Profesor(models.Model):
 
 #Modelo Tarea
 class Tarea(models.Model):
+    #Una de estos tipos de tarea puede ser evaluable o no
+    #Eso se controla con un campo booleano
     TIPOS_TAREA = [
         ('INDIVIDUAL', 'Individual'),
         ('GRUPAL', 'Grupal'),
-        ('EVALUABLE', 'Evaluable'),
     ]    
     nombre_tarea = models.CharField(max_length=200)
     tipo_tarea = models.CharField(max_length=20, choices=TIPOS_TAREA)
-    es_evaluable = models.BooleanField(default=False)
+    es_evaluable = models.BooleanField(default=False, blank=True, null=True)
     fecha_creacion = models.DateField(auto_now_add=True)
     fecha_entrega = models.DateField()
     class Meta:
@@ -48,7 +49,8 @@ class Tarea(models.Model):
 
 class Tarea_Individual(Tarea):
     id_tarea_individual = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    alumno = models.ForeignKey(Usuario, on_delete=models.CASCADE)    
+    alumno = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    profesores = models.ManyToManyField(Usuario, related_name='tarea_individual_profesores', blank=True, null=True)
 
     def __str__(self):
         return super().__str__() + f" - {self.alumno}"
@@ -56,14 +58,6 @@ class Tarea_Individual(Tarea):
 class Tarea_Grupal(Tarea):
     id_tarea_grupal = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     alumno = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-
+    profesores = models.ManyToManyField(Usuario, related_name='tareas_grupales_profesores', blank=True, null=True)
     def __str__(self):
         return super().__str__() + f" - {self.alumno}"
-
-class Tarea_Evaluable(Tarea):
-    id_tarea_evaluable = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    profesores = models.ManyToManyField(Usuario)
-    calificacion = models.FloatField()
-
-    def __str__(self):
-        return super().__str__() + f" - {self.profesores} - {self.calificacion}"

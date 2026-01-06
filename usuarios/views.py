@@ -1,16 +1,11 @@
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from usuarios.forms import UsuarioForm
+from usuarios.forms import TareaIndividualForm, UsuarioForm
 from usuarios.models import Profesor, Usuario, Alumno
 
 # Create your views here.
-alumnos = [
-        {"nombre": "Juan", "apellidos": "Pérez", "dni": "12345678A"},
-        {"nombre": "María", "apellidos": "Gómez", "dni": "87654321B"},
-    ]
-
-#Dar alta alumno
+#Dar alta usuario
 def alta_usuario(request):
     if request.method == 'POST':
         usuario_form = UsuarioForm(request.POST)
@@ -43,3 +38,17 @@ def visualizar_lista_usuarios(request):
     lista_usuarios = Usuario.objects.all()
     print(lista_usuarios)
     return render(request, 'lista_usuarios.html', {'lista_usuarios': lista_usuarios})
+
+#Crear tarea individual
+def crear_tarea_individual(request):
+    if request.method == 'POST':
+        tarea_individual_form = TareaIndividualForm(request.POST)
+        if tarea_individual_form.is_valid():
+            tarea = tarea_individual_form.save()            
+            messages.success(request, f'Tarea {tarea.nombre_tarea} creada correctamente.')
+            return redirect('visualizar_lista_usuarios')
+        else:
+            print(tarea_individual_form.errors)
+    else:
+        tarea_individual_form = TareaIndividualForm()
+    return render(request, 'creacion_tarea_individual.html', {'tarea_individual_form': tarea_individual_form})

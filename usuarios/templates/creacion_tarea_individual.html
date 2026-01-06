@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Creación de Tarea Individual{% endblock %}
+{% block content %}
+    <h2>Creación de Tarea Individual</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ tarea_individual_form.nombre_tarea|as_crispy_field }}
+        {{ tarea_individual_form.tipo_tarea|as_crispy_field }}
+        {{ tarea_individual_form.es_evaluable|as_crispy_field }}
+        {{ tarea_individual_form.fecha_entrega|as_crispy_field }}
+        {{ tarea_individual_form.alumno|as_crispy_field }}
+        {{ tarea_individual_form.profesores|as_crispy_field }}        
+        <button type="submit" class="btn btn-primary">Crear Tarea</button>
+    </form>
+{% endblock %}
