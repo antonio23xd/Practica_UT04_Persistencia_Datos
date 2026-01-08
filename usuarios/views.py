@@ -1,8 +1,8 @@
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from usuarios.forms import TareaIndividualForm, UsuarioForm
-from usuarios.models import Profesor, Tarea_Individual, Usuario, Alumno
+from usuarios.forms import TareaGrupalForm, TareaIndividualForm, UsuarioForm
+from usuarios.models import Profesor, Tarea_Grupal, Tarea_Individual, Usuario, Alumno
 
 # Create your views here.
 #Dar alta usuario
@@ -53,6 +53,20 @@ def crear_tarea_individual(request):
         tarea_individual_form = TareaIndividualForm()
     return render(request, 'creacion_tarea_individual.html', {'tarea_individual_form': tarea_individual_form})
 
+#Crear tarea grupal
+def crear_tarea_grupal(request):
+    if request.method == 'POST':
+        tarea_grupal_form = TareaGrupalForm(request.POST)
+        if tarea_grupal_form.is_valid():
+            tarea = tarea_grupal_form.save()            
+            messages.success(request, f'Tarea {tarea.nombre_tarea} creada correctamente.')
+            return redirect('visualizar_lista_usuarios')
+        else:
+            print(tarea_grupal_form.errors)
+    else:
+        tarea_grupal_form = TareaGrupalForm()
+    return render(request, 'creacion_tarea_grupal.html', {'tarea_grupal_form': tarea_grupal_form})
+
 #Visualizar las tareas del alumno
 def visualizar_tareas_alumno(request, id_usuario):
     usuario = Usuario.objects.filter(id_usuario=id_usuario).first()    
@@ -62,9 +76,10 @@ def visualizar_tareas_alumno(request, id_usuario):
     if alumno is None:
         raise Http404("Alumno no encontrado")
     tareas = Tarea_Individual.objects.filter(alumno=alumno.usuario)
+    tareas_grupales = Tarea_Grupal.objects.filter(alumnos=alumno)
     if not tareas:
         messages.info(request, f'El alumno {usuario.nombre} {usuario.apellidos} no tiene tareas asignadas.')
-    return render(request, 'visualizar_tareas_alumno.html', {'usuario': usuario, 'tareas': tareas})
+    return render(request, 'visualizar_tareas_alumno.html', {'usuario': usuario, 'tareas': tareas, 'tareas_grupales': tareas_grupales})
 
 #Visualizar las tareas del profesor
 def visualizar_tareas_profesor(request, id_usuario):
@@ -75,7 +90,8 @@ def visualizar_tareas_profesor(request, id_usuario):
     if profesor is None:
         raise Http404("Profesor no encontrado")
     tareas = Tarea_Individual.objects.filter(profesores=profesor.usuario)
+    tareas_grupales = Tarea_Grupal.objects.filter(profesores=profesor)
     print(tareas)
     if not tareas:
         messages.info(request, f'El profesor {usuario.nombre} {usuario.apellidos} no tiene tareas asignadas.')
-    return render(request, 'visualizar_tareas_profesor.html', {'usuario': usuario, 'tareas': tareas})
+    return render(request, 'visualizar_tareas_profesor.html', {'usuario': usuario, 'tareas': tareas, 'tareas_grupales': tareas_grupales})

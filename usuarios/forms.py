@@ -1,5 +1,5 @@
 from django import forms
-from usuarios.models import Tarea_Individual, Usuario
+from usuarios.models import Tarea_Grupal, Tarea_Individual, Usuario
 
 #Usuario Form
 class UsuarioForm(forms.ModelForm):    
@@ -88,4 +88,43 @@ class TareaIndividualForm(forms.ModelForm):
         tarea_individual = super().save(commit=False)
         if commit:
             tarea_individual.save()
+        return super().save(commit)
+    
+#Tarea Grupal Form
+class TareaGrupalForm(forms.ModelForm):
+    class Meta:
+        model = Tarea_Grupal
+        fields = ('nombre_tarea', 'tipo_tarea', 'es_evaluable', 'fecha_entrega', 'alumnos', 'profesores')
+        widgets = {
+            'nombre_tarea': forms.TextInput(attrs={'class': 'form-control'}),
+            'tipo_tarea': forms.Select(attrs={'class': 'form-control'}),
+            'es_evaluable': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'fecha_entrega': forms.DateInput(attrs={'type': 'date'}),
+            'alumnos': forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}),
+            'profesores': forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}),
+        }
+
+    def clean(self):
+        cleaned_data = super().clean()
+        #Validación nombre_tarea
+        if not cleaned_data.get('nombre_tarea'):
+            self.add_error('nombre_tarea', 'El nombre de la tarea no puede estar vacío.')
+        #Validación tipo_tarea
+        if not cleaned_data.get('tipo_tarea'):
+            self.add_error('tipo_tarea', 'El tipo de tarea no puede estar vacío.')
+        #Validación profesores si es_evaluable es True
+        if cleaned_data.get('es_evaluable') and not cleaned_data.get('profesores'):
+            self.add_error('profesores', 'Debe seleccionar al menos un profesor para una tarea evaluable.')                 
+        #Validación fecha_entrega
+        if not cleaned_data.get('fecha_entrega'):
+            self.add_error('fecha_entrega', 'La fecha de entrega no puede estar vacía.')
+        #Validación alumnos
+        if not cleaned_data.get('alumnos'):
+            self.add_error('alumnos', 'Debe seleccionar al menos un alumno para la tarea grupal.')
+        return cleaned_data
+
+    def save(self, commit=True):
+        tarea_grupal = super().save(commit=False)
+        if commit:
+            tarea_grupal.save()
         return super().save(commit)

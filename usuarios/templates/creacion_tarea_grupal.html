@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Crear Tarea Grupal{% endblock %}
+{% block content %}
+    <h2>Creación de Tarea Grupal</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ tarea_grupal_form.nombre_tarea|as_crispy_field }}
+        {{ tarea_grupal_form.tipo_tarea|as_crispy_field }}
+        {{ tarea_grupal_form.es_evaluable|as_crispy_field }}
+        {{ tarea_grupal_form.fecha_entrega|as_crispy_field }}
+        {{ tarea_grupal_form.profesores|as_crispy_field }}
+        {{ tarea_grupal_form.alumnos|as_crispy_field }}        
+        <button type="submit" class="btn btn-primary">Crear Tarea Grupal</button>
+    </form>
+{% endblock %}

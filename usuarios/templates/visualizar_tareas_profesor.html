@@ -5,8 +5,15 @@
 {% block content %}
     <h2>Tareas del Profesor</h2>
     <p>Nombre del Profesor: {{ usuario.nombre }} {{ usuario.apellidos }}</p>
+    <h2>Tareas Individuales del Profesor</h2>
     <ul>
         {% for tarea in tareas %}
+            <li>{{ tarea.nombre_tarea }} - {{ tarea.tipo_tarea }} - Fecha de Entrega: {{ tarea.fecha_entrega }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Tareas Grupales del Profesor</h2>
+    <ul>
+        {% for tarea in tareas_grupales %}
             <li>{{ tarea.nombre_tarea }} - {{ tarea.tipo_tarea }} - Fecha de Entrega: {{ tarea.fecha_entrega }}</li>
         {% endfor %}
     </ul>

@@ -57,7 +57,7 @@ class Tarea_Individual(Tarea):
 
 class Tarea_Grupal(Tarea):
     id_tarea_grupal = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    alumno = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    profesores = models.ManyToManyField(Usuario, related_name='tareas_grupales_profesores', blank=True, null=True)
+    alumnos = models.ManyToManyField(Alumno, related_name='tareas_grupales_alumnos', blank=True, null=True)
+    profesores = models.ManyToManyField(Profesor, related_name='tareas_grupales_profesores', blank=True, null=True)
     def __str__(self):
         return super().__str__() + f" - {self.alumno}"
