@@ -2,7 +2,7 @@ from django.http import Http404
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from usuarios.forms import TareaIndividualForm, UsuarioForm
-from usuarios.models import Profesor, Usuario, Alumno
+from usuarios.models import Profesor, Tarea_Individual, Usuario, Alumno
 
 # Create your views here.
 #Dar alta usuario
@@ -52,3 +52,30 @@ def crear_tarea_individual(request):
     else:
         tarea_individual_form = TareaIndividualForm()
     return render(request, 'creacion_tarea_individual.html', {'tarea_individual_form': tarea_individual_form})
+
+#Visualizar las tareas del alumno
+def visualizar_tareas_alumno(request, id_usuario):
+    usuario = Usuario.objects.filter(id_usuario=id_usuario).first()    
+    if usuario is None:
+        raise Http404("Usuario no encontrado")
+    alumno = Alumno.objects.filter(usuario=usuario).first()
+    if alumno is None:
+        raise Http404("Alumno no encontrado")
+    tareas = Tarea_Individual.objects.filter(alumno=alumno.usuario)
+    if not tareas:
+        messages.info(request, f'El alumno {usuario.nombre} {usuario.apellidos} no tiene tareas asignadas.')
+    return render(request, 'visualizar_tareas_alumno.html', {'usuario': usuario, 'tareas': tareas})
+
+#Visualizar las tareas del profesor
+def visualizar_tareas_profesor(request, id_usuario):
+    usuario = Usuario.objects.filter(id_usuario=id_usuario).first()    
+    if usuario is None:
+        raise Http404("Usuario no encontrado")
+    profesor = Profesor.objects.filter(usuario=usuario).first()
+    if profesor is None:
+        raise Http404("Profesor no encontrado")
+    tareas = Tarea_Individual.objects.filter(profesores=profesor.usuario)
+    print(tareas)
+    if not tareas:
+        messages.info(request, f'El profesor {usuario.nombre} {usuario.apellidos} no tiene tareas asignadas.')
+    return render(request, 'visualizar_tareas_profesor.html', {'usuario': usuario, 'tareas': tareas})

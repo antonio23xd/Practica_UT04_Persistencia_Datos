@@ -3,10 +3,15 @@
 
 {% block title %}Lista de Alumnos{% endblock %}
 {% block content %}
+<ol>
 {% for usuario in lista_usuarios %}
-    <a href="{% url 'visualizar_datos_usuario' usuario.id_usuario %}">
-        {{ usuario.nombre }} {{ usuario.apellidos }} {{ usuario.rol }}
-    </a>
-    <br>
+    <li>
+        <a href="{% url 'visualizar_datos_usuario' usuario.id_usuario %}">
+            {{ usuario.nombre }} {{ usuario.apellidos }}
+        </a>
+        {{ usuario.rol }}
+        <br>
+    </li>
 {% endfor %}
+</ol>
 {% endblock %}

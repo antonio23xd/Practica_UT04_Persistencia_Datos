@@ -13,5 +13,10 @@
     <p>DNI: {{ usuario.dni }}</p>
     <p>Email: {{ usuario.email }}</p>
     <hr>
+    {% if usuario.rol == 'ALUMNO' %}
+        <a href="{% url 'visualizar_tareas_alumno' usuario.id_usuario %}">Ver mis tareas</a>        
+    {% elif usuario.rol == 'PROFESOR' %}
+        <a href="{% url 'visualizar_tareas_profesor' usuario.id_usuario %}">Ver mis tareas</a>        
+    {% endif %}    
 </body>
 </html>
