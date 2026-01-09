@@ -13,9 +13,9 @@
     <p>DNI: {{ usuario.dni }}</p>
     <p>Email: {{ usuario.email }}</p>
     <hr>
-    {% if usuario.rol == 'ALUMNO' %}
+    {% if usuario.rol|lower == 'alumno' %}
         <a href="{% url 'visualizar_tareas_alumno' usuario.id_usuario %}">Ver mis tareas</a>        
-    {% elif usuario.rol == 'PROFESOR' %}
+    {% elif usuario.rol|lower == 'profesor' %}
         <a href="{% url 'visualizar_tareas_profesor' usuario.id_usuario %}">Ver mis tareas</a>        
     {% endif %}    
 </body>

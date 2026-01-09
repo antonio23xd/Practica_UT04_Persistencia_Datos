@@ -11,10 +11,10 @@ def alta_usuario(request):
         usuario_form = UsuarioForm(request.POST)
         if usuario_form.is_valid():
             usuario = usuario_form.save()
-            if usuario.rol == 'ALUMNO':                
+            if usuario.rol.lower() == 'ALUMNO'.lower():
                 alumno = Alumno(usuario=usuario)
                 alumno.save()
-            elif usuario.rol == 'PROFESOR':
+            elif usuario.rol.lower() == 'PROFESOR'.lower():
                 profesor = Profesor(usuario=usuario)
                 profesor.save()            
             messages.success(request, f'Usuario {usuario.nombre} {usuario.apellidos} creado correctamente.')
