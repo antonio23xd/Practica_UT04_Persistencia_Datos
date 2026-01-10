@@ -1,3 +1,4 @@
+import datetime
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.contrib import messages
@@ -44,9 +45,21 @@ def crear_tarea_individual(request):
     if request.method == 'POST':
         tarea_individual_form = TareaIndividualForm(request.POST)
         if tarea_individual_form.is_valid():
-            tarea = tarea_individual_form.save()            
-            messages.success(request, f'Tarea {tarea.nombre_tarea} creada correctamente.')
-            return redirect('visualizar_lista_usuarios')
+            tarea = tarea_individual_form.save()
+            id_usuario = request.POST.get('alumno_creador')
+            usuario = Usuario.objects.filter(id_usuario=id_usuario).first()
+            if usuario is None:
+                raise Http404("Usuario no encontrado")
+            else:
+                alumno_creador = Alumno.objects.filter(usuario=usuario).first()
+                if alumno_creador is None:
+                    raise Http404("Alumno creador no encontrado")
+                else:
+                    print('Alumno creador: ',alumno_creador)
+                    tarea.alumno_creador = alumno_creador
+                    tarea.save()
+                    messages.success(request, f'Tarea {tarea.nombre_tarea} creada correctamente.')
+                    return redirect('visualizar_lista_usuarios')
         else:
             print(tarea_individual_form.errors)
     else:
@@ -58,9 +71,21 @@ def crear_tarea_grupal(request):
     if request.method == 'POST':
         tarea_grupal_form = TareaGrupalForm(request.POST)
         if tarea_grupal_form.is_valid():
-            tarea = tarea_grupal_form.save()            
-            messages.success(request, f'Tarea {tarea.nombre_tarea} creada correctamente.')
-            return redirect('visualizar_lista_usuarios')
+            tarea = tarea_grupal_form.save()
+            id_usuario = request.POST.get('alumno_creador')
+            usuario = Usuario.objects.filter(id_usuario=id_usuario).first()
+            if usuario is None:
+                raise Http404("Usuario no encontrado")
+            else:
+                alumno_creador = Alumno.objects.filter(usuario=usuario).first()
+                if alumno_creador is None:
+                    raise Http404("Alumno creador no encontrado")
+                else:
+                    print('Alumno creador: ',alumno_creador)
+                    tarea.alumno_creador = alumno_creador
+                    tarea.save()            
+                    messages.success(request, f'Tarea {tarea.nombre_tarea} creada correctamente.')
+                    return redirect('visualizar_lista_usuarios')
         else:
             print(tarea_grupal_form.errors)
     else:
@@ -75,12 +100,13 @@ def visualizar_tareas_alumno(request, id_usuario):
     alumno = Alumno.objects.filter(usuario=usuario).first()
     if alumno is None:
         raise Http404("Alumno no encontrado")
-    tareas = Tarea_Individual.objects.filter(alumno=alumno.usuario)
+    tareas_creadas_individual = Tarea_Individual.objects.filter(alumno_creador=alumno)
+    tareas_creadas_grupal = Tarea_Grupal.objects.filter(alumno_creador=alumno)
+    tareas_individuales = Tarea_Individual.objects.filter(alumno=alumno.usuario)
     tareas_grupales = Tarea_Grupal.objects.filter(alumnos=alumno)
-    if not tareas:
+    if not tareas_individuales and not tareas_grupales:
         messages.info(request, f'El alumno {usuario.nombre} {usuario.apellidos} no tiene tareas asignadas.')
-    return render(request, 'visualizar_tareas_alumno.html', {'usuario': usuario, 'tareas': tareas, 'tareas_grupales': tareas_grupales})
-
+    return render(request, 'visualizar_tareas_alumno.html', {'usuario': usuario, 'tareas_individuales': tareas_individuales, 'tareas_grupales': tareas_grupales, 'tareas_creadas_individual': tareas_creadas_individual, 'tareas_creadas_grupal': tareas_creadas_grupal})
 #Visualizar las tareas del profesor
 def visualizar_tareas_profesor(request, id_usuario):
     usuario = Usuario.objects.filter(id_usuario=id_usuario).first()    

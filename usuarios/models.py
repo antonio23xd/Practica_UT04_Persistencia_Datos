@@ -1,5 +1,7 @@
 import uuid
 from django.db import models
+import datetime
+from django.utils import timezone
 
 # Create your models here.
 class Usuario(models.Model):
@@ -39,8 +41,9 @@ class Tarea(models.Model):
     nombre_tarea = models.CharField(max_length=200)
     tipo_tarea = models.CharField(max_length=20, choices=TIPOS_TAREA)
     es_evaluable = models.BooleanField(default=False, blank=True, null=True)
-    fecha_creacion = models.DateField(auto_now_add=True)
-    fecha_entrega = models.DateField()
+    alumno_creador = models.ForeignKey(Alumno, on_delete=models.CASCADE)
+    fecha_creacion = models.DateTimeField(default=timezone.now)
+    fecha_entrega = models.DateTimeField()
     class Meta:
         abstract = True
 
@@ -49,15 +52,17 @@ class Tarea(models.Model):
 
 class Tarea_Individual(Tarea):
     id_tarea_individual = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    tipo_tarea = models.CharField(max_length=20, choices=Tarea.TIPOS_TAREA, default='INDIVIDUAL')
     alumno = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    profesores = models.ManyToManyField(Usuario, related_name='tarea_individual_profesores', blank=True, null=True)
+    profesores = models.ManyToManyField(Usuario, related_name='tarea_individual_profesores', blank=True)
 
     def __str__(self):
         return super().__str__() + f" - {self.alumno}"
 
 class Tarea_Grupal(Tarea):
     id_tarea_grupal = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    alumnos = models.ManyToManyField(Alumno, related_name='tareas_grupales_alumnos', blank=True, null=True)
-    profesores = models.ManyToManyField(Profesor, related_name='tareas_grupales_profesores', blank=True, null=True)
+    tipo_tarea = models.CharField(max_length=20, choices=Tarea.TIPOS_TAREA, default='GRUPAL')
+    alumnos = models.ManyToManyField(Alumno, related_name='tareas_grupales_alumnos', blank=True)
+    profesores = models.ManyToManyField(Profesor, related_name='tareas_grupales_profesores', blank=True)
     def __str__(self):
         return super().__str__() + f" - {self.alumno}"

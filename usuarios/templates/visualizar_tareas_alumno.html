@@ -17,4 +17,15 @@
             <li>{{ tarea.nombre_tarea }} - {{ tarea.tipo_tarea }} - Fecha de Entrega: {{ tarea.fecha_entrega }}</li>
         {% endfor %}
     </ul>
+    <h2>Tareas Creadas por el Alumno</h2> 
+    <ul>
+        {% for tarea in tareas_creadas_individual %}
+            <li>{{ tarea.nombre_tarea }} - {{ tarea.tipo_tarea }} - Fecha de Entrega: {{ tarea.fecha_entrega }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for tarea in tareas_creadas_grupal %}
+            <li>{{ tarea.nombre_tarea }} - {{ tarea.tipo_tarea }} - Fecha de Entrega: {{ tarea.fecha_entrega }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}

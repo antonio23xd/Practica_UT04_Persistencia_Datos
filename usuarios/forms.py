@@ -51,34 +51,40 @@ class UsuarioForm(forms.ModelForm):
         return super().save(commit)
 
 #Tarea Individual Form
-class TareaIndividualForm(forms.ModelForm):
+class TareaIndividualForm(forms.ModelForm):    
     class Meta:
         model = Tarea_Individual
-        fields = ('nombre_tarea', 'tipo_tarea', 'es_evaluable', 'fecha_entrega', 'alumno', 'profesores')
+        fields = ('nombre_tarea', 'tipo_tarea', 'es_evaluable', 'alumno_creador', 'fecha_creacion', 'fecha_entrega', 'alumno', 'profesores')
         widgets = {
             'nombre_tarea': forms.TextInput(attrs={'class': 'form-control'}),
             'tipo_tarea': forms.Select(attrs={'class': 'form-control'}),
             'es_evaluable': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'fecha_creacion': forms.DateInput(attrs={'type': 'date'}),
+            'alumno_creador': forms.Select(attrs={'class': 'form-control'}),
             'fecha_entrega': forms.DateInput(attrs={'type': 'date'}),
             'alumno': forms.Select(attrs={'class': 'form-control'}),
             'profesores': forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}),
         }
     def clean(self):
         cleaned_data = super().clean()
-        print(cleaned_data.get('es_evaluable'))
-        print(cleaned_data.get('profesores'))
         #Validación nombre_tarea
         if not cleaned_data.get('nombre_tarea'):
             self.add_error('nombre_tarea', 'El nombre de la tarea no puede estar vacío.')
         #Validación tipo_tarea
         if not cleaned_data.get('tipo_tarea'):
             self.add_error('tipo_tarea', 'El tipo de tarea no puede estar vacío.')
+        else:
+            if cleaned_data.get('tipo_tarea').upper() != 'INDIVIDUAL':
+                self.add_error('tipo_tarea', 'El tipo de tarea debe ser INDIVIDUAL para este formulario.')
         #Validación profesores si es_evaluable es True
         if cleaned_data.get('es_evaluable') and not cleaned_data.get('profesores'):
             self.add_error('profesores', 'Debe seleccionar al menos un profesor para una tarea evaluable.')                 
         #Validación fecha_entrega
         if not cleaned_data.get('fecha_entrega'):
             self.add_error('fecha_entrega', 'La fecha de entrega no puede estar vacía.')
+        else:
+            if cleaned_data.get('fecha_entrega') <= cleaned_data.get('fecha_creacion'):
+                self.add_error('fecha_entrega', 'La fecha de entrega debe ser posterior a la fecha de creación.')
         #Validación alumno
         if not cleaned_data.get('alumno'):
             self.add_error('alumno', 'El alumno no puede estar vacío.')
@@ -92,13 +98,17 @@ class TareaIndividualForm(forms.ModelForm):
     
 #Tarea Grupal Form
 class TareaGrupalForm(forms.ModelForm):
+    #Compruebo si el tipo de tarea es grupal
+    #Por defecto es grupal, pero el usuario podría cambiarlo
     class Meta:
         model = Tarea_Grupal
-        fields = ('nombre_tarea', 'tipo_tarea', 'es_evaluable', 'fecha_entrega', 'alumnos', 'profesores')
+        fields = ('nombre_tarea', 'tipo_tarea', 'es_evaluable','alumno_creador','fecha_creacion','fecha_entrega', 'alumnos', 'profesores')
         widgets = {
             'nombre_tarea': forms.TextInput(attrs={'class': 'form-control'}),
             'tipo_tarea': forms.Select(attrs={'class': 'form-control'}),
             'es_evaluable': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'alumno_creador': forms.Select(attrs={'class': 'form-control'}),
+            'fecha_creacion': forms.DateInput(attrs={'type': 'date'}),
             'fecha_entrega': forms.DateInput(attrs={'type': 'date'}),
             'alumnos': forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}),
             'profesores': forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}),
@@ -112,12 +122,18 @@ class TareaGrupalForm(forms.ModelForm):
         #Validación tipo_tarea
         if not cleaned_data.get('tipo_tarea'):
             self.add_error('tipo_tarea', 'El tipo de tarea no puede estar vacío.')
+        else:
+            if cleaned_data.get('tipo_tarea').upper() != 'GRUPAL':
+                self.add_error('tipo_tarea', 'El tipo de tarea debe ser GRUPAL para este formulario.')
         #Validación profesores si es_evaluable es True
         if cleaned_data.get('es_evaluable') and not cleaned_data.get('profesores'):
             self.add_error('profesores', 'Debe seleccionar al menos un profesor para una tarea evaluable.')                 
         #Validación fecha_entrega
         if not cleaned_data.get('fecha_entrega'):
             self.add_error('fecha_entrega', 'La fecha de entrega no puede estar vacía.')
+        else:
+            if cleaned_data.get('fecha_entrega') <= cleaned_data.get('fecha_creacion'):
+                self.add_error('fecha_entrega', 'La fecha de entrega debe ser posterior a la fecha de creación.')
         #Validación alumnos
         if not cleaned_data.get('alumnos'):
             self.add_error('alumnos', 'Debe seleccionar al menos un alumno para la tarea grupal.')
