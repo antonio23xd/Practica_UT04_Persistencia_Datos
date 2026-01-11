@@ -1,0 +1,553 @@
+{
+"usuarios_usuario": [
+	{
+		"id_usuario" : "f273164c-a111-4101-8246-32ec871ff342",
+		"nombre" : "Juan",
+		"apellidos" : "Pérez",
+		"fecha_nacimiento" : "1990-03-15",
+		"dni" : "30123456A",
+		"email" : "juan.perez@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "2be5968d-a274-4c48-805c-538018f69caa",
+		"nombre" : "María",
+		"apellidos" : "Gómez",
+		"fecha_nacimiento" : "1988-07-22",
+		"dni" : "28987654B",
+		"email" : "mari.gomez@email.com",
+		"rol" : "profesor"
+	},
+	{
+		"id_usuario" : "4e81b54b-694a-4a33-b747-91d4050e40da",
+		"nombre" : "Carlos",
+		"apellidos" : "Rodríguez",
+		"fecha_nacimiento" : "1995-01-10",
+		"dni" : "33456789C",
+		"email" : "carlos.rodriguez@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "7953eb12-5d80-440c-a61c-713f91ead170",
+		"nombre" : "Lucía",
+		"apellidos" : "Fernández",
+		"fecha_nacimiento" : "1992-11-05",
+		"dni" : "31543210D",
+		"email" : "lucia.fernandez@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "827f6e03-4bc7-4232-bfc7-f1d150588c5d",
+		"nombre" : "Miguel",
+		"apellidos" : "López",
+		"fecha_nacimiento" : "1985-06-30",
+		"dni" : "27123498E",
+		"email" : "miguel.lopez@email.com",
+		"rol" : "profesor"
+	},
+	{
+		"id_usuario" : "1c9840db-73c3-428b-ba8c-70e215dc3e8c",
+		"nombre" : "Ana",
+		"apellidos" : "Martínez",
+		"fecha_nacimiento" : "1998-09-18",
+		"dni" : "36789012F",
+		"email" : "ana.martinez@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "903f34d3-4b4a-4363-9a7b-4a9e6301e1aa",
+		"nombre" : "Diego",
+		"apellidos" : "Sánchez",
+		"fecha_nacimiento" : "1991-02-27",
+		"dni" : "30987621G",
+		"email" : "diego.sanchez@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "1f005ca1-ef15-46a0-a442-836c25db9d7b",
+		"nombre" : "Sofía",
+		"apellidos" : "Romero",
+		"fecha_nacimiento" : "1996-12-12",
+		"dni" : "34876543H",
+		"email" : "sofia.romero@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "c865a5d9-eeb1-4a3a-8291-d74a77620fcf",
+		"nombre" : "Pablo",
+		"apellidos" : "Torres",
+		"fecha_nacimiento" : "1989-04-08",
+		"dni" : "29654321I",
+		"email" : "pablo.torres@email.com",
+		"rol" : "profesor"
+	},
+	{
+		"id_usuario" : "12c966d7-730e-4450-a4ad-7ffae0410b68",
+		"nombre" : "Valentina",
+		"apellidos" : "Ruiz",
+		"fecha_nacimiento" : "2000-08-25",
+		"dni" : "40123456J",
+		"email" : "valentina.ruiz@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b",
+		"nombre" : "Andrés",
+		"apellidos" : "Molina",
+		"fecha_nacimiento" : "1994-05-21",
+		"dni" : "32678901K",
+		"email" : "andres.molina@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "51fcde35-50f8-4f1c-9616-6f516b6d9d9f",
+		"nombre" : "Carolina",
+		"apellidos" : "Vega",
+		"fecha_nacimiento" : "1986-10-14",
+		"dni" : "27890123L",
+		"email" : "carolina.vega@email.com",
+		"rol" : "profesor"
+	},
+	{
+		"id_usuario" : "aa5da770-4707-42d7-a9d8-2254bca976aa",
+		"nombre" : "Federico",
+		"apellidos" : "Navarro",
+		"fecha_nacimiento" : "1993-01-09",
+		"dni" : "31987654M",
+		"email" : "federico.navarro@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "3e1e0763-3098-4881-949e-24e7a29010f9",
+		"nombre" : "Natalia",
+		"apellidos" : "Herrera",
+		"fecha_nacimiento" : "1999-07-03",
+		"dni" : "37890124N",
+		"email" : "natalia.herrera@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "654c6300-0c13-4773-98ee-730b537707c7",
+		"nombre" : "Roberto",
+		"apellidos" : "Castro",
+		"fecha_nacimiento" : "1982-03-28",
+		"dni" : "25987412O",
+		"email" : "roberto.castro@email.com",
+		"rol" : "profesor"
+	},
+	{
+		"id_usuario" : "bb63ec3f-5f18-4942-9a25-df9fde52c0b1",
+		"nombre" : "Florencia",
+		"apellidos" : "Acosta",
+		"fecha_nacimiento" : "1997-11-19",
+		"dni" : "35671234P",
+		"email" : "florencia.acosta@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "27b51f0e-3cce-4334-99cf-983613a186f2",
+		"nombre" : "Sebastián",
+		"apellidos" : "Ríos",
+		"fecha_nacimiento" : "1990-08-07",
+		"dni" : "30234567Q",
+		"email" : "sebastian.rios@email.com",
+		"rol" : "profesor"
+	},
+	{
+		"id_usuario" : "00785ae4-73c4-4b74-8600-5b778a3e4156",
+		"nombre" : "Camila",
+		"apellidos" : "Benítez",
+		"fecha_nacimiento" : "2001-04-16",
+		"dni" : "41234567R",
+		"email" : "camila.benitez@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "c1b56ece-2a31-4027-90a7-a32c99407818",
+		"nombre" : "Martín",
+		"apellidos" : "Ponce",
+		"fecha_nacimiento" : "1995-09-02",
+		"dni" : "33445566S",
+		"email" : "martin.ponce@email.com",
+		"rol" : "alumno"
+	},
+	{
+		"id_usuario" : "ec07679e-c982-49fd-b2e1-11b2af8d5ec8",
+		"nombre" : "Julieta",
+		"apellidos" : "Salazar",
+		"fecha_nacimiento" : "1987-12-30",
+		"dni" : "28123456T",
+		"email" : "julieta.salazar@email.com",
+		"rol" : "profesor"
+	}
+],
+"usuarios_alumno": [
+	{
+		"usuario_id" : "f273164c-a111-4101-8246-32ec871ff342"
+	},
+	{
+		"usuario_id" : "4e81b54b-694a-4a33-b747-91d4050e40da"
+	},
+	{
+		"usuario_id" : "7953eb12-5d80-440c-a61c-713f91ead170"
+	},
+	{
+		"usuario_id" : "1c9840db-73c3-428b-ba8c-70e215dc3e8c"
+	},
+	{
+		"usuario_id" : "903f34d3-4b4a-4363-9a7b-4a9e6301e1aa"
+	},
+	{
+		"usuario_id" : "1f005ca1-ef15-46a0-a442-836c25db9d7b"
+	},
+	{
+		"usuario_id" : "12c966d7-730e-4450-a4ad-7ffae0410b68"
+	},
+	{
+		"usuario_id" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b"
+	},
+	{
+		"usuario_id" : "aa5da770-4707-42d7-a9d8-2254bca976aa"
+	},
+	{
+		"usuario_id" : "3e1e0763-3098-4881-949e-24e7a29010f9"
+	},
+	{
+		"usuario_id" : "bb63ec3f-5f18-4942-9a25-df9fde52c0b1"
+	},
+	{
+		"usuario_id" : "00785ae4-73c4-4b74-8600-5b778a3e4156"
+	},
+	{
+		"usuario_id" : "c1b56ece-2a31-4027-90a7-a32c99407818"
+	}
+],
+"usuarios_profesor": [
+	{
+		"usuario_id" : "2be5968d-a274-4c48-805c-538018f69caa"
+	},
+	{
+		"usuario_id" : "827f6e03-4bc7-4232-bfc7-f1d150588c5d"
+	},
+	{
+		"usuario_id" : "c865a5d9-eeb1-4a3a-8291-d74a77620fcf"
+	},
+	{
+		"usuario_id" : "51fcde35-50f8-4f1c-9616-6f516b6d9d9f"
+	},
+	{
+		"usuario_id" : "654c6300-0c13-4773-98ee-730b537707c7"
+	},
+	{
+		"usuario_id" : "27b51f0e-3cce-4334-99cf-983613a186f2"
+	},
+	{
+		"usuario_id" : "ec07679e-c982-49fd-b2e1-11b2af8d5ec8"
+	}
+],
+"usuarios_tarea_individual": [
+	{
+		"nombre_tarea" : "TareaIndividual1",
+		"tipo_tarea" : "INDIVIDUAL",
+		"es_evaluable" : false,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-02-10",
+		"id_tarea_individual" : "699d636a-e8a5-4069-b3e3-eb28174df9ad",
+		"alumno_id" : "7953eb12-5d80-440c-a61c-713f91ead170",
+		"alumno_creador_id" : "f273164c-a111-4101-8246-32ec871ff342"
+	},
+	{
+		"nombre_tarea" : "TareaIndividual3_evaluable",
+		"tipo_tarea" : "INDIVIDUAL",
+		"es_evaluable" : true,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-03-22",
+		"id_tarea_individual" : "0254d862-fd32-4702-857c-85b83985ce41",
+		"alumno_id" : "3e1e0763-3098-4881-949e-24e7a29010f9",
+		"alumno_creador_id" : "1f005ca1-ef15-46a0-a442-836c25db9d7b"
+	},
+	{
+		"nombre_tarea" : "TareaIndividual2_evaluable",
+		"tipo_tarea" : "INDIVIDUAL",
+		"es_evaluable" : true,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-02-08",
+		"id_tarea_individual" : "7e2d9faf-38b2-4a01-84ec-d27cfb5df47d",
+		"alumno_id" : "12c966d7-730e-4450-a4ad-7ffae0410b68",
+		"alumno_creador_id" : "7953eb12-5d80-440c-a61c-713f91ead170"
+	},
+	{
+		"nombre_tarea" : "TareaIndividual4",
+		"tipo_tarea" : "INDIVIDUAL",
+		"es_evaluable" : false,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-03-31",
+		"id_tarea_individual" : "34591c1f-2f8f-4d35-84a3-7d2051936153",
+		"alumno_id" : "1c9840db-73c3-428b-ba8c-70e215dc3e8c",
+		"alumno_creador_id" : "00785ae4-73c4-4b74-8600-5b778a3e4156"
+	},
+	{
+		"nombre_tarea" : "TareaIndividual5",
+		"tipo_tarea" : "INDIVIDUAL",
+		"es_evaluable" : false,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-05-25",
+		"id_tarea_individual" : "4ad191ed-a2dd-47e9-85d2-369915efd009",
+		"alumno_id" : "1f005ca1-ef15-46a0-a442-836c25db9d7b",
+		"alumno_creador_id" : "bb63ec3f-5f18-4942-9a25-df9fde52c0b1"
+	}
+],
+"usuarios_tarea_individual_profesores": [
+	{
+		"id" : 5,
+		"tarea_individual_id" : "7e2d9faf-38b2-4a01-84ec-d27cfb5df47d",
+		"usuario_id" : "51fcde35-50f8-4f1c-9616-6f516b6d9d9f"
+	},
+	{
+		"id" : 6,
+		"tarea_individual_id" : "7e2d9faf-38b2-4a01-84ec-d27cfb5df47d",
+		"usuario_id" : "f273164c-a111-4101-8246-32ec871ff342"
+	},
+	{
+		"id" : 7,
+		"tarea_individual_id" : "7e2d9faf-38b2-4a01-84ec-d27cfb5df47d",
+		"usuario_id" : "ec07679e-c982-49fd-b2e1-11b2af8d5ec8"
+	},
+	{
+		"id" : 8,
+		"tarea_individual_id" : "0254d862-fd32-4702-857c-85b83985ce41",
+		"usuario_id" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b"
+	},
+	{
+		"id" : 9,
+		"tarea_individual_id" : "0254d862-fd32-4702-857c-85b83985ce41",
+		"usuario_id" : "12c966d7-730e-4450-a4ad-7ffae0410b68"
+	}
+],
+"usuarios_tarea_grupal": [
+	{
+		"nombre_tarea" : "TareaGrupal1",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : false,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-03-02",
+		"id_tarea_grupal" : "a2c059bb-e6ce-4300-a329-73d505faf806",
+		"alumno_creador_id" : "c1b56ece-2a31-4027-90a7-a32c99407818"
+	},
+	{
+		"nombre_tarea" : "TareaGrupal2_evaluable",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : true,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-02-25",
+		"id_tarea_grupal" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"alumno_creador_id" : "aa5da770-4707-42d7-a9d8-2254bca976aa"
+	},
+	{
+		"nombre_tarea" : "TareaGrupal3",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : false,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-01-30",
+		"id_tarea_grupal" : "7980c990-ab5c-42a2-8d88-1740bc383478",
+		"alumno_creador_id" : "7953eb12-5d80-440c-a61c-713f91ead170"
+	},
+	{
+		"nombre_tarea" : "TareaGrupal4",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : false,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-02-06",
+		"id_tarea_grupal" : "66d8f6a7-e8e7-4125-b9bd-19bce485afc1",
+		"alumno_creador_id" : "bb63ec3f-5f18-4942-9a25-df9fde52c0b1"
+	},
+	{
+		"nombre_tarea" : "TareaGrupal5_evaluable",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : true,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-03-06",
+		"id_tarea_grupal" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"alumno_creador_id" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b"
+	}
+],
+"usuarios_tarea_grupal_alumnos": [
+	{
+		"id" : 24,
+		"tarea_grupal_id" : "a2c059bb-e6ce-4300-a329-73d505faf806",
+		"alumno_id" : "1f005ca1-ef15-46a0-a442-836c25db9d7b"
+	},
+	{
+		"id" : 25,
+		"tarea_grupal_id" : "a2c059bb-e6ce-4300-a329-73d505faf806",
+		"alumno_id" : "903f34d3-4b4a-4363-9a7b-4a9e6301e1aa"
+	},
+	{
+		"id" : 26,
+		"tarea_grupal_id" : "a2c059bb-e6ce-4300-a329-73d505faf806",
+		"alumno_id" : "4e81b54b-694a-4a33-b747-91d4050e40da"
+	},
+	{
+		"id" : 27,
+		"tarea_grupal_id" : "a2c059bb-e6ce-4300-a329-73d505faf806",
+		"alumno_id" : "12c966d7-730e-4450-a4ad-7ffae0410b68"
+	},
+	{
+		"id" : 28,
+		"tarea_grupal_id" : "a2c059bb-e6ce-4300-a329-73d505faf806",
+		"alumno_id" : "bb63ec3f-5f18-4942-9a25-df9fde52c0b1"
+	},
+	{
+		"id" : 29,
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"alumno_id" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b"
+	},
+	{
+		"id" : 30,
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"alumno_id" : "c1b56ece-2a31-4027-90a7-a32c99407818"
+	},
+	{
+		"id" : 31,
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"alumno_id" : "f273164c-a111-4101-8246-32ec871ff342"
+	},
+	{
+		"id" : 32,
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"alumno_id" : "4e81b54b-694a-4a33-b747-91d4050e40da"
+	},
+	{
+		"id" : 33,
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"alumno_id" : "1c9840db-73c3-428b-ba8c-70e215dc3e8c"
+	},
+	{
+		"id" : 34,
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"alumno_id" : "3e1e0763-3098-4881-949e-24e7a29010f9"
+	},
+	{
+		"id" : 35,
+		"tarea_grupal_id" : "7980c990-ab5c-42a2-8d88-1740bc383478",
+		"alumno_id" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b"
+	},
+	{
+		"id" : 36,
+		"tarea_grupal_id" : "7980c990-ab5c-42a2-8d88-1740bc383478",
+		"alumno_id" : "903f34d3-4b4a-4363-9a7b-4a9e6301e1aa"
+	},
+	{
+		"id" : 37,
+		"tarea_grupal_id" : "7980c990-ab5c-42a2-8d88-1740bc383478",
+		"alumno_id" : "f273164c-a111-4101-8246-32ec871ff342"
+	},
+	{
+		"id" : 38,
+		"tarea_grupal_id" : "7980c990-ab5c-42a2-8d88-1740bc383478",
+		"alumno_id" : "7953eb12-5d80-440c-a61c-713f91ead170"
+	},
+	{
+		"id" : 39,
+		"tarea_grupal_id" : "7980c990-ab5c-42a2-8d88-1740bc383478",
+		"alumno_id" : "3e1e0763-3098-4881-949e-24e7a29010f9"
+	},
+	{
+		"id" : 40,
+		"tarea_grupal_id" : "7980c990-ab5c-42a2-8d88-1740bc383478",
+		"alumno_id" : "00785ae4-73c4-4b74-8600-5b778a3e4156"
+	},
+	{
+		"id" : 41,
+		"tarea_grupal_id" : "66d8f6a7-e8e7-4125-b9bd-19bce485afc1",
+		"alumno_id" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b"
+	},
+	{
+		"id" : 42,
+		"tarea_grupal_id" : "66d8f6a7-e8e7-4125-b9bd-19bce485afc1",
+		"alumno_id" : "c1b56ece-2a31-4027-90a7-a32c99407818"
+	},
+	{
+		"id" : 43,
+		"tarea_grupal_id" : "66d8f6a7-e8e7-4125-b9bd-19bce485afc1",
+		"alumno_id" : "f273164c-a111-4101-8246-32ec871ff342"
+	},
+	{
+		"id" : 44,
+		"tarea_grupal_id" : "66d8f6a7-e8e7-4125-b9bd-19bce485afc1",
+		"alumno_id" : "1c9840db-73c3-428b-ba8c-70e215dc3e8c"
+	},
+	{
+		"id" : 45,
+		"tarea_grupal_id" : "66d8f6a7-e8e7-4125-b9bd-19bce485afc1",
+		"alumno_id" : "12c966d7-730e-4450-a4ad-7ffae0410b68"
+	},
+	{
+		"id" : 46,
+		"tarea_grupal_id" : "66d8f6a7-e8e7-4125-b9bd-19bce485afc1",
+		"alumno_id" : "aa5da770-4707-42d7-a9d8-2254bca976aa"
+	},
+	{
+		"id" : 47,
+		"tarea_grupal_id" : "66d8f6a7-e8e7-4125-b9bd-19bce485afc1",
+		"alumno_id" : "3e1e0763-3098-4881-949e-24e7a29010f9"
+	},
+	{
+		"id" : 48,
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"alumno_id" : "c1b56ece-2a31-4027-90a7-a32c99407818"
+	},
+	{
+		"id" : 49,
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"alumno_id" : "f273164c-a111-4101-8246-32ec871ff342"
+	},
+	{
+		"id" : 50,
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"alumno_id" : "903f34d3-4b4a-4363-9a7b-4a9e6301e1aa"
+	},
+	{
+		"id" : 51,
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"alumno_id" : "1c9840db-73c3-428b-ba8c-70e215dc3e8c"
+	},
+	{
+		"id" : 52,
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"alumno_id" : "7953eb12-5d80-440c-a61c-713f91ead170"
+	},
+	{
+		"id" : 53,
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"alumno_id" : "3e1e0763-3098-4881-949e-24e7a29010f9"
+	},
+	{
+		"id" : 54,
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"alumno_id" : "00785ae4-73c4-4b74-8600-5b778a3e4156"
+	}
+],
+"usuarios_tarea_grupal_profesores": [
+	{
+		"id" : 3,
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"profesor_id" : "2be5968d-a274-4c48-805c-538018f69caa"
+	},
+	{
+		"id" : 4,
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"profesor_id" : "ec07679e-c982-49fd-b2e1-11b2af8d5ec8"
+	},
+	{
+		"id" : 5,
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"profesor_id" : "654c6300-0c13-4773-98ee-730b537707c7"
+	},
+	{
+		"id" : 6,
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"profesor_id" : "c865a5d9-eeb1-4a3a-8291-d74a77620fcf"
+	}
+]
+}
