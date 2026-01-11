@@ -44,3 +44,8 @@ El proyecto incluye un archivo `requirements.txt` con todas las dependencias nec
 Ejecuta el siguiente comando para instalar las librerías:
 ```bash
 pip install -r requirements.txt
+```
+## Datos iniciales
+El proyecto incluye `fixtures`JSON para cargar los registros en la base de datos. Ejecutarlo después de las migraciones:
+```bash
+python3 manage.py loaddata datos_iniciales.json
