@@ -1,0 +1,242 @@
+[
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "f273164c-a111-4101-8246-32ec871ff342",
+		"fields": {
+			"nombre" : "Juan",
+			"apellidos" : "Pérez",
+			"fecha_nacimiento" : "1990-03-15",
+			"dni" : "30123456A",
+			"email" : "juan.perez@email.com",
+			"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "2be5968d-a274-4c48-805c-538018f69caa",
+		"fields": {
+			"nombre" : "María",
+			"apellidos" : "Gómez",
+			"fecha_nacimiento" : "1988-07-22",
+			"dni" : "28987654B",
+			"email" : "mari.gomez@email.com",
+			"rol" : "profesor"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "4e81b54b-694a-4a33-b747-91d4050e40da",
+		"fields": {
+			"nombre" : "Carlos",
+			"apellidos" : "Rodríguez",
+			"fecha_nacimiento" : "1995-01-10",
+			"dni" : "33456789C",
+			"email" : "carlos.rodriguez@email.com",
+			"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "7953eb12-5d80-440c-a61c-713f91ead170",
+		"fields": {
+			"nombre" : "Lucía",
+			"apellidos" : "Fernández",
+			"fecha_nacimiento" : "1992-11-05",
+			"dni" : "31543210D",
+			"email" : "lucia.fernandez@email.com",
+			"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "827f6e03-4bc7-4232-bfc7-f1d150588c5d",
+		"fields": {
+			"nombre" : "Miguel",
+			"apellidos" : "López",
+			"fecha_nacimiento" : "1985-06-30",
+			"dni" : "27123498E",
+			"email" : "miguel.lopez@email.com",
+			"rol" : "profesor"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "1c9840db-73c3-428b-ba8c-70e215dc3e8c",
+		"fields": {
+			"nombre" : "Ana",
+			"apellidos" : "Martínez",
+			"fecha_nacimiento" : "1998-09-18",
+			"dni" : "36789012F",
+			"email" : "ana.martinez@email.com",
+			"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "903f34d3-4b4a-4363-9a7b-4a9e6301e1aa",
+		"fields": {
+			"nombre" : "Diego",
+			"apellidos" : "Sánchez",
+			"fecha_nacimiento" : "1991-02-27",
+			"dni" : "30987621G",
+			"email" : "diego.sanchez@email.com",
+			"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "1f005ca1-ef15-46a0-a442-836c25db9d7b",
+		"fields": {
+		"nombre" : "Sofía",
+		"apellidos" : "Romero",
+		"fecha_nacimiento" : "1996-12-12",
+		"dni" : "34876543H",
+		"email" : "sofia.romero@email.com",
+		"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "c865a5d9-eeb1-4a3a-8291-d74a77620fcf",
+		"fields": {
+		"nombre" : "Pablo",
+		"apellidos" : "Torres",
+		"fecha_nacimiento" : "1989-04-08",
+		"dni" : "29654321I",
+		"email" : "pablo.torres@email.com",
+		"rol" : "profesor"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "12c966d7-730e-4450-a4ad-7ffae0410b68",
+		"fields": {
+		"nombre" : "Valentina",
+		"apellidos" : "Ruiz",
+		"fecha_nacimiento" : "2000-08-25",
+		"dni" : "40123456J",
+		"email" : "valentina.ruiz@email.com",
+		"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b",
+		"fields": {
+		"nombre" : "Andrés",
+		"apellidos" : "Molina",
+		"fecha_nacimiento" : "1994-05-21",
+		"dni" : "32678901K",
+		"email" : "andres.molina@email.com",
+		"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "51fcde35-50f8-4f1c-9616-6f516b6d9d9f",
+		"fields": {
+		"nombre" : "Carolina",
+		"apellidos" : "Vega",
+		"fecha_nacimiento" : "1986-10-14",
+		"dni" : "27890123L",
+		"email" : "carolina.vega@email.com",
+		"rol" : "profesor"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "aa5da770-4707-42d7-a9d8-2254bca976aa",
+		"fields": {
+		"nombre" : "Federico",
+		"apellidos" : "Navarro",
+		"fecha_nacimiento" : "1993-01-09",
+		"dni" : "31987654M",
+		"email" : "federico.navarro@email.com",
+		"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "3e1e0763-3098-4881-949e-24e7a29010f9",
+		"fields": {
+		"nombre" : "Natalia",
+		"apellidos" : "Herrera",
+		"fecha_nacimiento" : "1999-07-03",
+		"dni" : "37890124N",
+		"email" : "natalia.herrera@email.com",
+		"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "654c6300-0c13-4773-98ee-730b537707c7",
+		"fields": {
+		"nombre" : "Roberto",
+		"apellidos" : "Castro",
+		"fecha_nacimiento" : "1982-03-28",
+		"dni" : "25987412O",
+		"email" : "roberto.castro@email.com",
+		"rol" : "profesor"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "bb63ec3f-5f18-4942-9a25-df9fde52c0b1",
+		"fields": {
+		"nombre" : "Florencia",
+		"apellidos" : "Acosta",
+		"fecha_nacimiento" : "1997-11-19",
+		"dni" : "35671234P",
+		"email" : "florencia.acosta@email.com",
+		"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "27b51f0e-3cce-4334-99cf-983613a186f2",
+		"fields": {
+		"nombre" : "Sebastián",
+		"apellidos" : "Ríos",
+		"fecha_nacimiento" : "1990-08-07",
+		"dni" : "30234567Q",
+		"email" : "sebastian.rios@email.com",
+		"rol" : "profesor"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "00785ae4-73c4-4b74-8600-5b778a3e4156",
+		"fields": {
+		"nombre" : "Camila",
+		"apellidos" : "Benítez",
+		"fecha_nacimiento" : "2001-04-16",
+		"dni" : "41234567R",
+		"email" : "camila.benitez@email.com",
+		"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "c1b56ece-2a31-4027-90a7-a32c99407818",
+		"fields": {
+		"nombre" : "Martín",
+		"apellidos" : "Ponce",
+		"fecha_nacimiento" : "1995-09-02",
+		"dni" : "33445566S",
+		"email" : "martin.ponce@email.com",
+		"rol" : "alumno"
+		}
+	},
+	{
+		"model" : "usuarios.usuario",
+		"pk" : "ec07679e-c982-49fd-b2e1-11b2af8d5ec8",
+		"fields": {
+		"nombre" : "Julieta",
+		"apellidos" : "Salazar",
+		"fecha_nacimiento" : "1987-12-30",
+		"dni" : "28123456T",
+		"email" : "julieta.salazar@email.com",
+		"rol" : "profesor"
+		}
+	}
+]

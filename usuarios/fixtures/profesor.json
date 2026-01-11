@@ -1,0 +1,51 @@
+[
+	{
+		"model" : "usuarios.profesor",
+		"pk" : "2be5968d-a274-4c48-805c-538018f69caa",
+		"fields": {
+		"usuario" : "2be5968d-a274-4c48-805c-538018f69caa"
+		}
+	},
+	{
+		"model" : "usuarios.profesor",
+		"pk" : "827f6e03-4bc7-4232-bfc7-f1d150588c5d",
+		"fields": {
+		"usuario" : "827f6e03-4bc7-4232-bfc7-f1d150588c5d"
+		}
+	},
+	{
+		"model" : "usuarios.profesor",
+		"pk" : "c865a5d9-eeb1-4a3a-8291-d74a77620fcf",
+		"fields": {
+		"usuario" : "c865a5d9-eeb1-4a3a-8291-d74a77620fcf"
+		}
+	},
+	{
+		"model" : "usuarios.profesor",
+		"pk" : "51fcde35-50f8-4f1c-9616-6f516b6d9d9f",
+		"fields": {
+		"usuario" : "51fcde35-50f8-4f1c-9616-6f516b6d9d9f"
+		}
+	},
+	{
+		"model" : "usuarios.profesor",
+		"pk" : "654c6300-0c13-4773-98ee-730b537707c7",
+		"fields": {
+			"usuario" : "654c6300-0c13-4773-98ee-730b537707c7"
+		}
+	},
+	{
+		"model" : "usuarios.profesor",
+		"pk" : "27b51f0e-3cce-4334-99cf-983613a186f2",
+		"fields": {
+			"usuario" : "27b51f0e-3cce-4334-99cf-983613a186f2"
+		}
+	},
+	{
+		"model" : "usuarios.profesor",
+		"pk" : "ec07679e-c982-49fd-b2e1-11b2af8d5ec8",
+		"fields": {
+		"usuario" : "ec07679e-c982-49fd-b2e1-11b2af8d5ec8"
+		}
+	}
+]

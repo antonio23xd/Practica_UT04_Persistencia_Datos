@@ -1,0 +1,34 @@
+[
+	{
+		"model" : "usuarios.tarea_grupal_profesores",
+		"pk" : 3,
+		"fields": {
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"profesor_id" : "2be5968d-a274-4c48-805c-538018f69caa"
+		}
+	},
+	{
+		"model" : "usuarios.tarea_grupal_profesores",
+		"pk" : 4,
+		"fields": {
+		"tarea_grupal_id" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"profesor_id" : "ec07679e-c982-49fd-b2e1-11b2af8d5ec8"
+		}
+	},
+	{
+		"model" : "usuarios.tarea_grupal_profesores",
+		"pk" : 5,
+		"fields": {
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"profesor_id" : "654c6300-0c13-4773-98ee-730b537707c7"
+		}
+	},
+	{
+		"model" : "usuarios.tarea_grupal_profesores",
+		"pk" : 6,
+		"fields": {
+		"tarea_grupal_id" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"profesor_id" : "c865a5d9-eeb1-4a3a-8291-d74a77620fcf"
+		}
+	}
+]

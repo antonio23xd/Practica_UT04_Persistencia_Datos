@@ -1,0 +1,62 @@
+[
+	{
+		"model" : "usuarios.tarea_grupal",
+		"pk" : "a2c059bb-e6ce-4300-a329-73d505faf806",
+		"fields": {
+		"nombre_tarea" : "TareaGrupal1",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : false,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-03-02",
+		"alumno_creador_id" : "c1b56ece-2a31-4027-90a7-a32c99407818"
+		}
+	},
+	{
+		"model" : "usuarios.tarea_grupal",
+		"pk" : "66447879-d438-4a54-a51a-39e8c2deea61",
+		"fields": {
+		"nombre_tarea" : "TareaGrupal2_evaluable",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : true,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-02-25",
+		"alumno_creador_id" : "aa5da770-4707-42d7-a9d8-2254bca976aa"
+		}
+	},
+	{
+		"model" : "usuarios.tarea_grupal",
+		"pk" : "7980c990-ab5c-42a2-8d88-1740bc383478",
+		"fields": {
+		"nombre_tarea" : "TareaGrupal3",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : false,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-01-30",
+		"alumno_creador_id" : "7953eb12-5d80-440c-a61c-713f91ead170"
+		}
+	},
+	{
+		"model" : "usuarios.tarea_grupal",
+		"pk" : "66d8f6a7-e8e7-4125-b9bd-19bce485afc1",
+		"fields": {
+		"nombre_tarea" : "TareaGrupal4",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : false,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-02-06",
+		"alumno_creador_id" : "bb63ec3f-5f18-4942-9a25-df9fde52c0b1"
+		}
+	},
+	{
+		"model" : "usuarios.tarea_grupal",
+		"pk" : "faba7131-64dd-463d-9cb1-0ec17a09d6c2",
+		"fields": {
+		"nombre_tarea" : "TareaGrupal5_evaluable",
+		"tipo_tarea" : "GRUPAL",
+		"es_evaluable" : true,
+		"fecha_creacion" : "2026-01-10",
+		"fecha_entrega" : "2026-03-06",
+		"alumno_creador_id" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b"
+		}
+	}
+]

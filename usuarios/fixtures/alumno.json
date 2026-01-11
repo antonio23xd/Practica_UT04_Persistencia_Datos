@@ -1,0 +1,93 @@
+[
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "f273164c-a111-4101-8246-32ec871ff342",
+		"fields": {
+		"usuario" : "f273164c-a111-4101-8246-32ec871ff342"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "4e81b54b-694a-4a33-b747-91d4050e40da",
+		"fields": {
+		"usuario" : "4e81b54b-694a-4a33-b747-91d4050e40da"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "7953eb12-5d80-440c-a61c-713f91ead170",
+		"fields": {
+		"usuario" : "7953eb12-5d80-440c-a61c-713f91ead170"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "1c9840db-73c3-428b-ba8c-70e215dc3e8c",
+		"fields": {
+		"usuario" : "1c9840db-73c3-428b-ba8c-70e215dc3e8c"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "903f34d3-4b4a-4363-9a7b-4a9e6301e1aa",
+		"fields": {
+		"usuario" : "903f34d3-4b4a-4363-9a7b-4a9e6301e1aa"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "1f005ca1-ef15-46a0-a442-836c25db9d7b",
+		"fields": {
+		"usuario" : "1f005ca1-ef15-46a0-a442-836c25db9d7b"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "12c966d7-730e-4450-a4ad-7ffae0410b68",
+		"fields": {
+		"usuario" : "12c966d7-730e-4450-a4ad-7ffae0410b68"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b",
+		"fields": {
+		"usuario" : "be966cb0-5a5e-4bde-ba8f-f79a9685043b"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "aa5da770-4707-42d7-a9d8-2254bca976aa",
+		"fields": {
+		"usuario" : "aa5da770-4707-42d7-a9d8-2254bca976aa"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "3e1e0763-3098-4881-949e-24e7a29010f9",
+		"fields": {
+		"usuario" : "3e1e0763-3098-4881-949e-24e7a29010f9"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "bb63ec3f-5f18-4942-9a25-df9fde52c0b1",
+		"fields": {
+		"usuario" : "bb63ec3f-5f18-4942-9a25-df9fde52c0b1"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "00785ae4-73c4-4b74-8600-5b778a3e4156",
+		"fields": {
+		"usuario" : "00785ae4-73c4-4b74-8600-5b778a3e4156"
+		}
+	},
+	{
+		"model" : "usuarios.alumno",
+		"pk" : "c1b56ece-2a31-4027-90a7-a32c99407818",
+		"fields": {
+		"usuario" : "c1b56ece-2a31-4027-90a7-a32c99407818"
+		}
+	}
+]

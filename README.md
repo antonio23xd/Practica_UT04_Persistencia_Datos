@@ -46,6 +46,14 @@ Ejecuta el siguiente comando para instalar las librerías:
 pip install -r requirements.txt
 ```
 ## Datos iniciales
-El proyecto incluye `fixtures`JSON para cargar los registros en la base de datos. Ejecutarlo después de las migraciones:
+El proyecto incluye `fixtures`JSON para cargar los registros en la base de datos. Ejecutarlo después de las migraciones y en el siguiente orden:
 ```bash
-python3 manage.py loaddata datos_iniciales.json
+python3 manage.py loaddata usuario.json
+python3 manage.py loaddata alumno.json
+python3 manage.py loaddata profesor.json
+python3 manage.py loaddata tarea_individual.json
+python3 manage.py loaddata tarea_individual_profesores.json
+python3 manage.py loaddata tarea_grupal.json
+python3 manage.py loaddata tarea_grupal_alumnos.json
+python3 manage.py loaddata tarea_grupal_profesores.json
+```
