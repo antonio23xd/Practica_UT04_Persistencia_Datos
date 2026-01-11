@@ -45,6 +45,26 @@ Ejecuta el siguiente comando para instalar las librerías:
 ```bash
 pip install -r requirements.txt
 ```
+## Crear base de datos
+Lanzar las siguientes líneas de código en DBeaver para crear las base de datos.
+
+```bash
+do
+$$
+begin
+	if not exists (select 1 from pg_catalog.pg_roles where rolname = 'alumno') then
+		create user alumno with password 'alumno';
+		alter user alumno CREATEDB;
+		raise notice 'Usuario creado.';
+	else
+		raise notice 'Usuario ya ha sido creado anteriormente.';
+	end if;
+end
+$$;
+create database PracticaUT04 owner alumno;
+grant all privileges on database PracticaUT04 to alumno;
+```
+
 ## Datos iniciales
 El proyecto incluye `fixtures`JSON para cargar los registros en la base de datos. Ejecutarlo después de las migraciones y en el siguiente orden:
 ```bash
