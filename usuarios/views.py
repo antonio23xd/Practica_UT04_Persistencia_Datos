@@ -107,6 +107,7 @@ def visualizar_tareas_alumno(request, id_usuario):
     if not tareas_individuales and not tareas_grupales:
         messages.info(request, f'El alumno {usuario.nombre} {usuario.apellidos} no tiene tareas asignadas.')
     return render(request, 'visualizar_tareas_alumno.html', {'usuario': usuario, 'tareas_individuales': tareas_individuales, 'tareas_grupales': tareas_grupales, 'tareas_creadas_individual': tareas_creadas_individual, 'tareas_creadas_grupal': tareas_creadas_grupal})
+
 #Visualizar las tareas del profesor
 def visualizar_tareas_profesor(request, id_usuario):
     usuario = Usuario.objects.filter(id_usuario=id_usuario).first()    
